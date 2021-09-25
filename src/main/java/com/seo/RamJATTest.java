@@ -2376,10 +2376,10 @@ public void calculateLagna(double time)
 			grah_pos_amsa.add(11+":"+getEleventhPlaceBasedOnLagnaAtAmsa()+":"+getMentionedPlaceGrahAtAmsa(11));
 			grah_pos_amsa.add(12+":"+getTwelevethPlaceBasedOnLagnaAtAmsa()+":"+getMentionedPlaceGrahAtAmsa(12));
 			
-			int value1=Integer.parseInt(tf4.getText().trim()==""?"0":tf4.getText().trim());
-			int value2=Integer.parseInt(tf5.getText().trim()==""?"0":tf5.getText().trim());
-			int value3=Integer.parseInt(tf7.getText().trim()==""?"0":tf7.getText().trim());
-			int value4=Integer.parseInt(tf8.getText().trim()==""?"0":tf8.getText().trim());
+			int value1=Integer.parseInt(tf4.getText().trim().length()==0?"0":tf4.getText().trim());
+			int value2=Integer.parseInt(tf5.getText().trim().length()==0?"0":tf5.getText().trim());
+			int value3=Integer.parseInt(tf7.getText().trim().length()==0?"0":tf7.getText().trim());
+			int value4=Integer.parseInt(tf8.getText().trim().length()==0?"0":tf8.getText().trim());
 			GadiyaVgadiyaMain gy_result=new GadiyaVgadiyaMain();
 			GadiyaVgadiyaMain gyyy=new GadiyaVgadiyaMain();
 			GadiyaVgadiyaMain g_dup1=new GadiyaVgadiyaMain();
