@@ -25,7 +25,7 @@ class RamJATTest  extends Frame implements ActionListener,MouseListener,MouseMot
 	LinkedHashMap lhs_nak=new LinkedHashMap();
 	LinkedHashMap lhs_raasi=new LinkedHashMap();
 	LinkedHashMap lhs_cal_raasi=new LinkedHashMap();
-	JList ch1,ch2,ch3,grah_pos,grah_pos_amsa;
+	List ch1,ch2,ch3,grah_pos,grah_pos_amsa;
 	JButton b=null;
 	FileOutputStream fos=null;
 	PrintStream ps=null;
@@ -210,26 +210,26 @@ class RamJATTest  extends Frame implements ActionListener,MouseListener,MouseMot
 		r=new RamYear();
 		temp=new RamYear();
 		b=new JButton("SHOW");
-		cb=new Checkbox("GAJA KESARI YOGA");cb.setState(false);
+		cb=new JCheckBox("GAJA KESARI YOGA");cb.setSelected(false);
 		cb.addItemListener(this);
 		
-		cb1=new Checkbox("GAJA KESARI YOGA");cb1.setState(false);
+		cb1=new JCheckBox("GAJA KESARI YOGA");cb1.setSelected(false);
 		cb1.addItemListener(this);
-		cb2=new Checkbox("GAJA KESARI YOGA");cb2.setState(false);
+		cb2=new JCheckBox("GAJA KESARI YOGA");cb2.setSelected(false);
 		cb2.addItemListener(this);
-		cb3=new Checkbox("GAJA KESARI YOGA");cb3.setState(false);
+		cb3=new JCheckBox("GAJA KESARI YOGA");cb3.setSelected(false);
 		cb3.addItemListener(this);
-		cb4=new Checkbox("GAJA KESARI YOGA");cb4.setState(false);
+		cb4=new JCheckBox("GAJA KESARI YOGA");cb4.setSelected(false);
 		cb4.addItemListener(this);
-		cb5=new Checkbox("GAJA KESARI YOGA");cb5.setState(false);
+		cb5=new JCheckBox("GAJA KESARI YOGA");cb5.setSelected(false);
 		cb5.addItemListener(this);
-		cb6=new Checkbox("GAJA KESARI YOGA");cb6.setState(false);
+		cb6=new JCheckBox("GAJA KESARI YOGA");cb6.setSelected(false);
 		cb6.addItemListener(this);
-		cb7=new Checkbox("GAJA KESARI YOGA");cb7.setState(false);
+		cb7=new JCheckBox("GAJA KESARI YOGA");cb7.setSelected(false);
 		cb7.addItemListener(this);
-		cb8=new Checkbox("GAJA KESARI YOGA");cb8.setState(false);
+		cb8=new JCheckBox("GAJA KESARI YOGA");cb8.setSelected(false);
 		cb8.addItemListener(this);
-		cb9=new Checkbox("GAJA KESARI YOGA");cb9.setState(false);
+		cb9=new JCheckBox("GAJA KESARI YOGA");cb9.setSelected(false);
 		cb9.addItemListener(this);
 		
 		try{
@@ -278,11 +278,11 @@ class RamJATTest  extends Frame implements ActionListener,MouseListener,MouseMot
 		lhs_nak.put(new Integer(UTTARABHADRA_26),UTTARABHADRA);
 		lhs_nak.put(new Integer(REVATHI_27),REVATHI);
 		
-		ch1=new java.awt.List(30,false);
-		ch2=new java.awt.List(9,false);
-		ch3=new java.awt.List(4,false);
-		grah_pos=new java.awt.List(9,false);
-		grah_pos_amsa=new java.awt.List(9,false);
+		ch1=new List();
+		ch2=new List();
+		ch3=new List();
+		grah_pos=new List();
+		grah_pos_amsa=new List();
 		ch3.add("1");
 		ch3.add("2");
 		ch3.add("3");
@@ -2147,14 +2147,14 @@ public void calculateLagna(double time)
 				 */
 				private static final long serialVersionUID = 1L;
 				private String LAGNA="";
-			TextField mesham,vrishabham,midhunam,karkatakam,simham,kanya,thula,vrischikam,dhanassu,makaram,kumbham,meenam;
-	    	TextField mesham_amsa,vrishabham_amsa,midhunam_amsa,karkatakam_amsa,simham_amsa,kanya_amsa,thula_amsa,vrischikam_amsa,dhanassu_amsa,makaram_amsa,kumbham_amsa,meenam_amsa;
-	    	JJButton jb=null;
+			JTextField mesham,vrishabham,midhunam,karkatakam,simham,kanya,thula,vrischikam,dhanassu,makaram,kumbham,meenam;
+	    	JTextField mesham_amsa,vrishabham_amsa,midhunam_amsa,karkatakam_amsa,simham_amsa,kanya_amsa,thula_amsa,vrischikam_amsa,dhanassu_amsa,makaram_amsa,kumbham_amsa,meenam_amsa;
+	    	JButton jb=null;
 	    		public RamFrame(String var1,String var2,String var3,String var4,String var5,String var6,String var7,String var8,String var9,String var10,String var11,String var12)
 	    		{
 	    			this.setVisible(true);
 	    	    	this.setSize(800,800);	
-	    	    	jb=new JJButton("SHOW");add(jb);jb.addActionListener(this);jb.setBounds(0,0,50,50);
+	    	    	jb=new JButton("SHOW");add(jb);jb.addActionListener(this);jb.setBounds(0,0,50,50);
 	    	    	mesham=new JTextField(50);
 	    			add(mesham);
 	    			int x= 100, y=90;
@@ -2393,16 +2393,16 @@ public void calculateLagna(double time)
 			GadiyaVgadiyaMain gy_op=gy_result.convertGantaToGadiya(gyyy);
 			tf6.setText(gy_op.getGadiya()+"-"+gy_op.getVgadiya());
 	    }
-	    cb.setState(isGajaKesariYoga());
-	    cb1.setState(getUchchaRaasi(INAH).equalsIgnoreCase(getRAVI()));
-	    cb2.setState(getUchchaRaasi(SASI).equalsIgnoreCase(getCHANDRUDU()));
-	    cb3.setState(getUchchaRaasi(KUJA).equalsIgnoreCase(getKUJUDU()));
-	    cb4.setState(getUchchaRaasi(RAAHU).equalsIgnoreCase(getRAAHUVU()));
-	    cb5.setState(getUchchaRaasi(JEEVA).equalsIgnoreCase(getGURUDU()));
-	    cb6.setState(getUchchaRaasi(MANDA).equalsIgnoreCase(getSANI()));
-	    cb7.setState(getUchchaRaasi(GNA).equalsIgnoreCase(getBHUDHUDU()));
-	    cb8.setState(getUchchaRaasi(KETU).equalsIgnoreCase(getKETUVU()));
-	    cb9.setState(getUchchaRaasi(BRUGHU).equalsIgnoreCase(getSUKRUDU()));
+	    cb.setSelected(isGajaKesariYoga());
+	    cb1.setSelected(getUchchaRaasi(INAH).equalsIgnoreCase(getRAVI()));
+	    cb2.setSelected(getUchchaRaasi(SASI).equalsIgnoreCase(getCHANDRUDU()));
+	    cb3.setSelected(getUchchaRaasi(KUJA).equalsIgnoreCase(getKUJUDU()));
+	    cb4.setSelected(getUchchaRaasi(RAAHU).equalsIgnoreCase(getRAAHUVU()));
+	    cb5.setSelected(getUchchaRaasi(JEEVA).equalsIgnoreCase(getGURUDU()));
+	    cb6.setSelected(getUchchaRaasi(MANDA).equalsIgnoreCase(getSANI()));
+	    cb7.setSelected(getUchchaRaasi(GNA).equalsIgnoreCase(getBHUDHUDU()));
+	    cb8.setSelected(getUchchaRaasi(KETU).equalsIgnoreCase(getKETUVU()));
+	    cb9.setSelected(getUchchaRaasi(BRUGHU).equalsIgnoreCase(getSUKRUDU()));
 	}
 	
 	public void mouseClicked(MouseEvent me) {
