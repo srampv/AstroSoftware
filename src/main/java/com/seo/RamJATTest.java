@@ -183,7 +183,7 @@ class RamJATTest  extends Frame implements ActionListener,MouseListener,MouseMot
 		setSize(1300,1300);
 		setVisible(true);
 		setLayout(null);
-		setTitle("Ram Applet");
+		setTitle("Ram Astro Software");
 		setRAASI_LAGNA(VRISCHIKAM); //SETTING THE RAASI LAGNA
 		describingAmsaLagna(getRAASI_LAGNA());// SETTING THE AMSA LAGNA
 		addWindowListener(this);
