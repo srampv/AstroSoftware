@@ -25,13 +25,13 @@ class RamJATTest  extends Frame implements ActionListener,MouseListener,MouseMot
 	LinkedHashMap lhs_nak=new LinkedHashMap();
 	LinkedHashMap lhs_raasi=new LinkedHashMap();
 	LinkedHashMap lhs_cal_raasi=new LinkedHashMap();
-	java.awt.List ch1,ch2,ch3,grah_pos,grah_pos_amsa;
-	Button b=null;
+	JList ch1,ch2,ch3,grah_pos,grah_pos_amsa;
+	JButton b=null;
 	FileOutputStream fos=null;
 	PrintStream ps=null;
-	TextField ruk_tf=null,buk_tf=null,tf1,tf2,tf3,tf4,tf5,tf6,tf7,tf8;
-	Label l1,l2,l3,l4,l5,l6,cbl1,cbl2,cbl3,cbl4,cbl5,cbl6,cbl7,cbl8,cbl9;
-	Checkbox cb=null,cb1,cb2,cb3,cb4,cb5,cb6,cb7,cb8,cb9;
+	JTextField ruk_tf=null,buk_tf=null,tf1,tf2,tf3,tf4,tf5,tf6,tf7,tf8;
+	JLabel l1,l2,l3,l4,l5,l6,cbl1,cbl2,cbl3,cbl4,cbl5,cbl6,cbl7,cbl8,cbl9;
+	JCheckBox cb=null,cb1,cb2,cb3,cb4,cb5,cb6,cb7,cb8,cb9;
 	DefaultMutableTreeNode root=null;
 	public static final String MESHAM="MESHAM";
 	public static final String VRISHABHAM="VRISHABHAM";
@@ -176,8 +176,8 @@ class RamJATTest  extends Frame implements ActionListener,MouseListener,MouseMot
 	public static final int POORVABHADRA_25=25;
 	public static final int UTTARABHADRA_26=26;
 	public static final int REVATHI_27=27;
-	Panel p=null,p1=null;
-	TextArea ta=null;
+	JPanel p=null,p1=null;
+	JTextArea ta=null;
 	public RamJATTest()
 	{
 		setSize(1300,1300);
@@ -189,27 +189,27 @@ class RamJATTest  extends Frame implements ActionListener,MouseListener,MouseMot
 		addWindowListener(this);
 		addMouseListener(this);
 		addMouseMotionListener(this); 
-		ta=new TextArea(50,50); root=new DefaultMutableTreeNode("ROOT");
+		ta=new JTextArea(50,50); root=new DefaultMutableTreeNode("ROOT");
 		DefaultMutableTreeNode dmt=new DefaultMutableTreeNode("1");
 		root.add(dmt);
-		l1=new Label("NAKSHTRA SET");
-		l2=new Label("GRAHA SET");
-		l3=new Label("PADAM");
-		l4=new Label("RAASI");
-		l5=new Label("AMSA");
-		l6=new Label("GAJA KESARI YOGA");
-		cbl1=new Label("RAVI UCHCHA");
-		cbl2=new Label("CHANDRA UCHCHA");
-		cbl3=new Label("KUJA UCHCHA");
-		cbl4=new Label("RAAHU UCHCHA");
-		cbl5=new Label("JEEVA UCHCHA");
-		cbl6=new Label("MANDA UCHCHA");
-		cbl7=new Label("BHUDHUDU UCHCHA");
-		cbl8=new Label("KETU UCHCHA");
-		cbl9=new Label("SUKRA UCHCHA");
+		l1=new JLabel("NAKSHTRA SET");
+		l2=new JLabel("GRAHA SET");
+		l3=new JLabel("PADAM");
+		l4=new JLabel("RAASI");
+		l5=new JLabel("AMSA");
+		l6=new JLabel("GAJA KESARI YOGA");
+		cbl1=new JLabel("RAVI UCHCHA");
+		cbl2=new JLabel("CHANDRA UCHCHA");
+		cbl3=new JLabel("KUJA UCHCHA");
+		cbl4=new JLabel("RAAHU UCHCHA");
+		cbl5=new JLabel("JEEVA UCHCHA");
+		cbl6=new JLabel("MANDA UCHCHA");
+		cbl7=new JLabel("BHUDHUDU UCHCHA");
+		cbl8=new JLabel("KETU UCHCHA");
+		cbl9=new JLabel("SUKRA UCHCHA");
 		r=new RamYear();
 		temp=new RamYear();
-		b=new Button("SHOW");
+		b=new JButton("SHOW");
 		cb=new Checkbox("GAJA KESARI YOGA");cb.setState(false);
 		cb.addItemListener(this);
 		
@@ -325,20 +325,20 @@ class RamJATTest  extends Frame implements ActionListener,MouseListener,MouseMot
 	      ch1.add(POORVABHADRA);
 	      ch1.add(UTTARABHADRA);
 	      ch1.add(REVATHI);
-	      ruk_tf=new TextField(50);
-	      buk_tf=new TextField(50);
-	      tf1=new TextField(25);
-	      tf2=new TextField(10);
-	      tf3=new TextField(10);
-	      tf4=new TextField(10);
-	      tf5=new TextField(10);
-	      tf6=new TextField(10);
-	      tf7=new TextField(10);
-	      tf8=new TextField(10);
+	      ruk_tf=new JTextField(50);
+	      buk_tf=new JTextField(50);
+	      tf1=new JTextField(25);
+	      tf2=new JTextField(10);
+	      tf3=new JTextField(10);
+	      tf4=new JTextField(10);
+	      tf5=new JTextField(10);
+	      tf6=new JTextField(10);
+	      tf7=new JTextField(10);
+	      tf8=new JTextField(10);
 	      tf7.setText("5");
 	      tf8.setText("30");
-		p=new Panel();
-		p1=new Panel();
+		p=new JPanel();
+		p1=new JPanel();
 		JTree jt =new JTree(root,true);
 		p.add(ch1);ch1.setBounds(50,55,200,450);
 		 p.add(jt);
@@ -2149,58 +2149,58 @@ public void calculateLagna(double time)
 				private String LAGNA="";
 			TextField mesham,vrishabham,midhunam,karkatakam,simham,kanya,thula,vrischikam,dhanassu,makaram,kumbham,meenam;
 	    	TextField mesham_amsa,vrishabham_amsa,midhunam_amsa,karkatakam_amsa,simham_amsa,kanya_amsa,thula_amsa,vrischikam_amsa,dhanassu_amsa,makaram_amsa,kumbham_amsa,meenam_amsa;
-	    	JButton jb=null;
+	    	JJButton jb=null;
 	    		public RamFrame(String var1,String var2,String var3,String var4,String var5,String var6,String var7,String var8,String var9,String var10,String var11,String var12)
 	    		{
 	    			this.setVisible(true);
 	    	    	this.setSize(800,800);	
-	    	    	jb=new JButton("SHOW");add(jb);jb.addActionListener(this);jb.setBounds(0,0,50,50);
-	    	    	mesham=new TextField(50);
+	    	    	jb=new JJButton("SHOW");add(jb);jb.addActionListener(this);jb.setBounds(0,0,50,50);
+	    	    	mesham=new JTextField(50);
 	    			add(mesham);
 	    			int x= 100, y=90;
 	    			mesham.setBounds(x,y,50,50);
 	    			mesham.setText(var1);
-	    			vrishabham=new TextField(50);
+	    			vrishabham=new JTextField(50);
 	    			add(vrishabham);
 	    			vrishabham.setBounds(x+70,y,50,50);
 	    			vrishabham.setText(var2);
-	    			midhunam=new TextField(50);
+	    			midhunam=new JTextField(50);
 	    			add(midhunam);
 	    			midhunam.setBounds(x+140,y,50,50);
 	    			midhunam.setText(var3);
-	    			karkatakam=new TextField(50);
+	    			karkatakam=new JTextField(50);
 	    			add(karkatakam);
 	    			karkatakam.setBounds(x+140,y+70,50,50);
 	    			karkatakam.setText(var4);
-	    			simham=new TextField(50);
+	    			simham=new JTextField(50);
 	    			add(simham);
 	    			simham.setBounds(x+140,y+140,50,50);
 	    			simham.setText(var5);
-	    			kanya=new TextField(50);
+	    			kanya=new JTextField(50);
 	    			add(kanya);
 	    			kanya.setBounds(x+140,y+210,50,50);
 	    			kanya.setText(var6);
-	    			thula=new TextField(50);
+	    			thula=new JTextField(50);
 	    			add(thula);
 	    			thula.setBounds(x+70,y+210,50,50);
 	    			thula.setText(var7);
-	    			vrischikam=new TextField(50);
+	    			vrischikam=new JTextField(50);
 	    			add(vrischikam);
 	    			vrischikam.setBounds(x,y+210,50,50);
 	    			vrischikam.setText(var8);
-	    			dhanassu=new TextField(50);
+	    			dhanassu=new JTextField(50);
 	    			add(dhanassu);
 	    			dhanassu.setBounds(x-70,y+210,50,50);
 	    			dhanassu.setText(var9);
-	    			makaram=new TextField(50);
+	    			makaram=new JTextField(50);
 	    			add(makaram);
 	    			makaram.setBounds(x-70,y+140,50,50);
 	    			makaram.setText(var10);
-	    			kumbham=new TextField(50);
+	    			kumbham=new JTextField(50);
 	    			add(kumbham);
 	    			kumbham.setBounds(x-70,y+70,50,50);
 	    			kumbham.setText(var11);
-	    			meenam=new TextField(50);
+	    			meenam=new JTextField(50);
 	    			add(meenam);
 	    			meenam.setBounds(x-70,y,50,50);
 	    			meenam.setText(var12);
@@ -2208,51 +2208,51 @@ public void calculateLagna(double time)
 	    			/* AMSA */
 	    			
 	    			
-	    			mesham_amsa=new TextField(50);
+	    			mesham_amsa=new JTextField(50);
 	    			add(mesham_amsa);
 	    			 x= 500; y=90;
 	    			mesham_amsa.setBounds(x,y,50,50);
-	    			vrishabham_amsa=new TextField(50);
+	    			vrishabham_amsa=new JTextField(50);
 	    			add(vrishabham_amsa);
 	    			vrishabham_amsa.setBounds(x+70,y,50,50);
 	    			
-	    			midhunam_amsa=new TextField(50);
+	    			midhunam_amsa=new JTextField(50);
 	    			add(midhunam_amsa);
 	    			midhunam_amsa.setBounds(x+140,y,50,50);
 	    			
-	    			karkatakam_amsa=new TextField(50);
+	    			karkatakam_amsa=new JTextField(50);
 	    			add(karkatakam_amsa);
 	    			karkatakam_amsa.setBounds(x+140,y+70,50,50);
 	    			
-	    			simham_amsa=new TextField(50);
+	    			simham_amsa=new JTextField(50);
 	    			add(simham_amsa);
 	    			simham_amsa.setBounds(x+140,y+140,50,50);
 	    			
-	    			kanya_amsa=new TextField(50);
+	    			kanya_amsa=new JTextField(50);
 	    			add(kanya_amsa);
 	    			kanya_amsa.setBounds(x+140,y+210,50,50);
 	    			
-	    			thula_amsa=new TextField(50);
+	    			thula_amsa=new JTextField(50);
 	    			add(thula_amsa);
 	    			thula_amsa.setBounds(x+70,y+210,50,50);
 	    			
-	    			vrischikam_amsa=new TextField(50);
+	    			vrischikam_amsa=new JTextField(50);
 	    			add(vrischikam_amsa);
 	    			vrischikam_amsa.setBounds(x,y+210,50,50);
 	    			
-	    			dhanassu_amsa=new TextField(50);
+	    			dhanassu_amsa=new JTextField(50);
 	    			add(dhanassu_amsa);
 	    			dhanassu_amsa.setBounds(x-70,y+210,50,50);
 	    			
-	    			makaram_amsa=new TextField(50);
+	    			makaram_amsa=new JTextField(50);
 	    			add(makaram_amsa);
 	    			makaram_amsa.setBounds(x-70,y+140,50,50);
 	    			
-	    			kumbham_amsa=new TextField(50);
+	    			kumbham_amsa=new JTextField(50);
 	    			add(kumbham_amsa);
 	    			kumbham_amsa.setBounds(x-70,y+70,50,50);
 	    			
-	    			meenam_amsa=new TextField(50);
+	    			meenam_amsa=new JTextField(50);
 	    			add(meenam_amsa);
 	    			meenam_amsa.setBounds(x-70,y,50,50);
 	    		}
