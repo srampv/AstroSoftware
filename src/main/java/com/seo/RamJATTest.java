@@ -340,7 +340,8 @@ class RamJATTest  extends Frame implements ActionListener,MouseListener,MouseMot
 		p=new Panel();
 		p1=new Panel();
 		JTree jt =new JTree(root,true);
-		p.add("SOUTH",ch1);ch1.setBounds(50,55,200,450); p.add(jt);jt.setBounds(224,518,130,50);jt.addTreeSelectionListener(this);
+		p.add("SOUTH",ch1);ch1.setBounds(50,55,200,450); p.add(jt);
+		jt.setBounds(224,518,130,50);jt.addTreeSelectionListener(this);
 		p.add("NORTH",ch2);ch2.setBounds(255,55,200,250);
 		p.add("EAST",ch3); ch3.setBounds(460,55,200,75);
 		p.add("WEST",ta);   ta.setBounds(255,310,400,190);p.add(cbl1);p.add(cbl2);p.add(cbl3);p.add(cbl4);
@@ -391,9 +392,10 @@ class RamJATTest  extends Frame implements ActionListener,MouseListener,MouseMot
 	}
 	
 	@SuppressWarnings("deprecation")
-	public String searchForStringinFile(String searchStr,File f) throws IOException
+	public String searchForStringinFile(String searchStr,InputStream fis) throws IOException
 	{
-		FileInputStream fis=new FileInputStream(f);
+
+
 		DataInputStream dis=new DataInputStream(fis);
 		
 		String st="";
@@ -843,7 +845,8 @@ class RamJATTest  extends Frame implements ActionListener,MouseListener,MouseMot
 		System.out.println("Hello World!");
 		RamJATTest rr=new RamJATTest();
 		try {
-			rr.searchForStringinFile( "Mercury is in the 8th house",new File("D:\\Ram-SOFTWARES\\jathajka-nidhi\\Bhrigu Sutras.txt"));
+			rr.searchForStringinFile( "Mercury is in the 8th house",
+					Thread.currentThread().getContextClassLoader().getResourceAsStream("Bhrigu Sutras.txt"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -2373,10 +2376,10 @@ public void calculateLagna(double time)
 			grah_pos_amsa.add(11+":"+getEleventhPlaceBasedOnLagnaAtAmsa()+":"+getMentionedPlaceGrahAtAmsa(11));
 			grah_pos_amsa.add(12+":"+getTwelevethPlaceBasedOnLagnaAtAmsa()+":"+getMentionedPlaceGrahAtAmsa(12));
 			
-			int value1=Integer.parseInt(tf4.getText().trim());
-			int value2=Integer.parseInt(tf5.getText().trim());
-			int value3=Integer.parseInt(tf7.getText().trim());
-			int value4=Integer.parseInt(tf8.getText().trim());
+			int value1=Integer.parseInt(tf4.getText().trim()==""?"0":tf4.getText().trim());
+			int value2=Integer.parseInt(tf5.getText().trim()==""?"0":tf5.getText().trim());
+			int value3=Integer.parseInt(tf7.getText().trim()==""?"0":tf7.getText().trim());
+			int value4=Integer.parseInt(tf8.getText().trim()==""?"0":tf8.getText().trim());
 			GadiyaVgadiyaMain gy_result=new GadiyaVgadiyaMain();
 			GadiyaVgadiyaMain gyyy=new GadiyaVgadiyaMain();
 			GadiyaVgadiyaMain g_dup1=new GadiyaVgadiyaMain();
