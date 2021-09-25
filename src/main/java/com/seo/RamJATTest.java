@@ -340,11 +340,13 @@ class RamJATTest  extends Frame implements ActionListener,MouseListener,MouseMot
 		p=new Panel();
 		p1=new Panel();
 		JTree jt =new JTree(root,true);
-		p.add("SOUTH",ch1);ch1.setBounds(50,55,200,450); p.add(jt);
+		p.add(ch1);ch1.setBounds(50,55,200,450);
+		 p.add(jt);
 		jt.setBounds(224,518,130,50);jt.addTreeSelectionListener(this);
-		p.add("NORTH",ch2);ch2.setBounds(255,55,200,250);
-		p.add("EAST",ch3); ch3.setBounds(460,55,200,75);
-		p.add("WEST",ta);   ta.setBounds(255,310,400,190);p.add(cbl1);p.add(cbl2);p.add(cbl3);p.add(cbl4);
+		p.add(ch2);ch2.setBounds(255,55,200,250);
+		p.add(ch3); ch3.setBounds(460,55,200,75);
+		   ta.setBounds(274,500,400,190);p.add(cbl1);p.add(cbl2);p.add(cbl3);p.add(cbl4);
+		   p1.add(ta);
 		p.add(cbl5);p.add(cbl6);p.add(cbl7);p.add(cbl8);p.add(cbl9);
 		p.add(cb);cb.setBounds(469,259,10,10);cb1.setBounds(53,516,10,10);cbl1.setBounds(79,512,100,10);
 		cb2.setBounds(53,526,10,10);cbl2.setBounds(79,522,100,10);
